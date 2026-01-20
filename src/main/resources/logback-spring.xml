@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    ROOT CONFIGURATION TAG
+    This is the wrapper for the entire logging setup.
+-->
+<configuration>
+
+    <!-- ======================================================================= -->
+    <!-- 1. CONSOLE APPENDER (The Screen Writer)                                 -->
+    <!-- This part handles printing text to your IntelliJ Console or Terminal.    -->
+    <!-- ======================================================================= -->
+    <appender name="myConsole" class="ch.qos.logback.core.ConsoleAppender">
+
+        <!-- The Encoder turns the log event into text -->
+        <encoder>
+            <!--
+                THE PATTERN EXPLAINED:
+                %d{...}      -> Date and Time (Year-Month-Day Hour:Minute:Second)
+                %highlight() -> Colors the log level (RED for Error, GREEN for Info)
+                %-5level     -> The Log Level (INFO, WARN, ERROR), padded to 5 spaces
+                %thread      -> The name of the thread running the code (e.g., main)
+                %cyan()      -> Colors the class name Blue/Cyan for readability
+                %logger{40}  -> The Class Name where the log came from (shortened to 40 chars)
+                %msg         -> The actual message you wrote in log.info("...")
+                %n           -> New Line (Enter)
+            -->
+            <pattern>
+                %d{yyyy-MM-dd HH:mm:ss} %highlight(%-5level) --- [%15.15thread] %cyan(%-40.40logger{39}) : %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+
+    <!-- ======================================================================= -->
+    <!-- 2. ROLLING FILE APPENDER (The File Saver)                               -->
+    <!-- This saves logs to a file and creates new files when they get too big.  -->
+    <!-- ======================================================================= -->
+    <appender name="myFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+
+        <!-- The active file name. This is where logs go RIGHT NOW. -->
+        <file>logs/journalApp.log</file>
+
+        <!-- this tells the logback to append here. even if we close the
+         project and start again the previous record will also be there -->
+        <append>true</append>
+
+        <!-- this only saves the logs when we run the server one. when we start the server again
+            it removes the old logs and saves new ones only-->
+
+        <!--   <append>false</append>    -->
+
+
+        <!-- The Rolling Policy: "How do we handle old files?" -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+
+            <!--
+                ARCHIVE NAME PATTERN:
+                When the file rolls over, rename it to this pattern.
+                %d{yyyy-MM-dd} -> Creates a new file every day.
+                %i             -> If multiple files occur in one day, number them (0, 1, 2).
+            -->
+            <fileNamePattern>logs/archived/journalApp-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+
+            <!-- MAX SIZE: If the file hits 10MB, close it and start a new one immediately. -->
+            <maxFileSize>10MB</maxFileSize>
+
+            <!-- HISTORY: Delete files older than 30 days to save space. -->
+            <maxHistory>30</maxHistory>
+
+            <!-- TOTAL CAP: If all log files combined exceed 1GB, delete the oldest ones. -->
+            <totalSizeCap>1GB</totalSizeCap>
+
+        </rollingPolicy>
+
+        <encoder>
+            <!-- Note: No colors (%highlight) here because text files don't support colors. -->
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level --- [%15.15thread] %-40.40logger{39} : %msg%n</pattern>
+        </encoder>
+    </appender>
+
+
+    <!-- ======================================================================= -->
+    <!-- 3. CUSTOM LOGGERS (Individual Volume Knobs)                             -->
+    <!-- Here we decide which packages are Loud (DEBUG) and which are Quiet.     -->
+    <!-- ======================================================================= -->
+
+    <!--
+        YOUR PROJECT LOGS:
+        Set this to DEBUG or TRACE so you can see everything YOUR code is doing.
+        Change "com.ahmadmalik.mySpringBootProject" to your actual package name.
+    -->
+    <logger name="com.ahmadmalik.mySpringBootProject" level="DEBUG" />
+
+    <!--
+        SPRING BOOT SYSTEM LOGS:
+        Set to INFO. We don't want to see Spring's internal debugs unless we are fixing a framework bug.
+    -->
+    <logger name="org.springframework" level="INFO" />
+
+    <!--
+        MONGODB LOGS:
+        Set to WARN. This silences the connection noise logs.
+    -->
+    <logger name="org.mongodb.driver" level="WARN" />
+
+
+    <!-- ======================================================================= -->
+    <!-- 4. THE ROOT LOGGER (The Master Switch)                                  -->
+    <!-- This applies to everything not mentioned above.                         -->
+    <!-- ======================================================================= -->
+    <root level="INFO">
+        <!-- Connect the Console Appender (Turn on the Screen) -->
+        <appender-ref ref="myConsole" />
+
+        <!-- Connect the File Appender (Turn on the File Save) -->
+        <appender-ref ref="myFile" />
+    </root>
+
+</configuration>

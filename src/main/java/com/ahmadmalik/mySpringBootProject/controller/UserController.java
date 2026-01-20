@@ -4,6 +4,7 @@ package com.ahmadmalik.mySpringBootProject.controller;
 import com.ahmadmalik.mySpringBootProject.entity.Users;
 import com.ahmadmalik.mySpringBootProject.repository.UserRepository;
 import com.ahmadmalik.mySpringBootProject.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
