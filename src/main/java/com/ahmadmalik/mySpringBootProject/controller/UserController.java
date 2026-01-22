@@ -4,6 +4,8 @@ package com.ahmadmalik.mySpringBootProject.controller;
 import com.ahmadmalik.mySpringBootProject.api_Response.WeatherResponse;
 import com.ahmadmalik.mySpringBootProject.entity.Users;
 import com.ahmadmalik.mySpringBootProject.repository.UserRepository;
+import com.ahmadmalik.mySpringBootProject.service.ChatgptService;
+import com.ahmadmalik.mySpringBootProject.service.CohereService;
 import com.ahmadmalik.mySpringBootProject.service.UserService;
 import com.ahmadmalik.mySpringBootProject.service.WeatherService;
 import lombok.extern.slf4j.Slf4j;
@@ -16,6 +18,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -27,6 +30,11 @@ public class UserController {
 
     @Autowired
     private WeatherService weatherService;
+
+    @Autowired
+    private ChatgptService chatgptService;
+
+    @Autowired CohereService cohereService;
 
     @Autowired
     private UserRepository userRepository;
@@ -100,7 +108,7 @@ public class UserController {
     @GetMapping
     public ResponseEntity<?> weatherCondition() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        WeatherResponse weatherResponse = weatherService.getWeather("Lahore");
+        WeatherResponse weatherResponse = weatherService.getWeather("Multan");
         WeatherResponse.CurrentCondition current = weatherResponse.getData().getCurrentCondition().get(0);
         if (current != null) {
             System.out.println("hi " + authentication.getName());
@@ -108,6 +116,32 @@ public class UserController {
         }
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 
+    }
+
+    //  code is ok. but the problem is money. no balance in gpt account. that is y not running
+    @PostMapping("gpt")
+    public ResponseEntity<?> chatgptUsingAPI(@RequestBody String question) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        System.out.println("Hi " + authentication.getName());
+        String response = chatgptService.getChatgptReply(question);
+        if (response != null) {
+            return new ResponseEntity<>(response, HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+    }
+
+
+    @PostMapping("cohere")
+    public ResponseEntity<?> cohereUsingAPI(@RequestBody Map<String, String> payload) {
+        String question = payload.get("message");
+        System.out.println("DEBUG QUESTION: " + question);
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        System.out.println("Hi " + authentication.getName());
+        String response = cohereService.getCohereReply(question);
+        if (response != null) {
+            return new ResponseEntity<>(response, HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 
 
