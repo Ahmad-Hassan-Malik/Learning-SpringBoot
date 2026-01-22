@@ -1,9 +1,11 @@
 package com.ahmadmalik.mySpringBootProject.controller;
 
 
+import com.ahmadmalik.mySpringBootProject.api_Response.WeatherResponse;
 import com.ahmadmalik.mySpringBootProject.entity.Users;
 import com.ahmadmalik.mySpringBootProject.repository.UserRepository;
 import com.ahmadmalik.mySpringBootProject.service.UserService;
+import com.ahmadmalik.mySpringBootProject.service.WeatherService;
 import lombok.extern.slf4j.Slf4j;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +24,9 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private WeatherService weatherService;
 
     @Autowired
     private UserRepository userRepository;
@@ -89,6 +94,20 @@ public class UserController {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         userRepository.deleteByUserName(authentication.getName());
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+
+    @GetMapping
+    public ResponseEntity<?> weatherCondition() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        WeatherResponse weatherResponse = weatherService.getWeather("Lahore");
+        WeatherResponse.CurrentCondition current = weatherResponse.getData().getCurrentCondition().get(0);
+        if (current != null) {
+            System.out.println("hi " + authentication.getName());
+            return new ResponseEntity<>(current, HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+
     }
 
 
