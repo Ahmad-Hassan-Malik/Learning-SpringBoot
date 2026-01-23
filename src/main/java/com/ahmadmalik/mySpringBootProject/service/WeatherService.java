@@ -13,7 +13,7 @@ import org.springframework.web.client.RestTemplate;
 public class WeatherService {
 
     @Value("${weather.api.key}")
-    private static final String apiKey;
+    private String apiKey;
 
     private static final String API = "https://api.worldweatheronline.com/premium/v1/weather.ashx?key=API-KEY&q=CITY&format=json";
 

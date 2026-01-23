@@ -19,7 +19,7 @@ import java.util.List;
 public class ChatgptService {
 
     @Value("${chatGPT.api.key}")
-    private static final String gptApiKey;
+    private String gptApiKey;
 
     // do not need to put api-key in the following url. gpt requires the key to be hidden inside the header
     private static final String API_URL = "https://api.openai.com/v1/chat/completions";

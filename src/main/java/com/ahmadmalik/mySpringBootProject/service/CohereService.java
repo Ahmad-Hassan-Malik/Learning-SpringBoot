@@ -15,8 +15,16 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class CohereService {
 
+    //   this will show error because of static and final
+    //  static ==  as static variable belongs to class not the object, spring does not handle class. it manages instances(beans)
+    //  final  ==  when we write final with a variable, we need to assign value immediately. spring assigns value later that is why we cannot unse final
+    //   same for other also
+
+//    @Value("${cohere.api.key}")
+//    private static final String cohereApiKey;
+
     @Value("${cohere.api.key}")
-    private static final String cohereApiKey;
+    private String cohereApiKey;
 
     // do not need to put api-key in the following url. gpt requires the key to be hidden inside the header
     private static final String API_URL = "https://api.cohere.ai/v1/chat";
