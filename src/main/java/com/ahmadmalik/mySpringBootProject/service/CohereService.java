@@ -3,17 +3,20 @@ package com.ahmadmalik.mySpringBootProject.service;
 import com.ahmadmalik.mySpringBootProject.api_Response.CohereRequest;
 import com.ahmadmalik.mySpringBootProject.api_Response.CohereResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-@Component
+@Service
 public class CohereService {
 
-    private static final String cohereApiKey = "ENTER-COHERE-API-KEY";
+    @Value("${cohere.api.key}")
+    private static final String cohereApiKey;
 
     // do not need to put api-key in the following url. gpt requires the key to be hidden inside the header
     private static final String API_URL = "https://api.cohere.ai/v1/chat";

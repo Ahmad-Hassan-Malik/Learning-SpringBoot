@@ -3,20 +3,23 @@ package com.ahmadmalik.mySpringBootProject.service;
 import com.ahmadmalik.mySpringBootProject.api_Response.ChatgptRequest;
 import com.ahmadmalik.mySpringBootProject.api_Response.ChatgptResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
+@Service
 public class ChatgptService {
 
-    private static final String gptApiKey = "ENTER-CHATGPT-API-KEY";
+    @Value("${chatGPT.api.key}")
+    private static final String gptApiKey;
 
     // do not need to put api-key in the following url. gpt requires the key to be hidden inside the header
     private static final String API_URL = "https://api.openai.com/v1/chat/completions";
