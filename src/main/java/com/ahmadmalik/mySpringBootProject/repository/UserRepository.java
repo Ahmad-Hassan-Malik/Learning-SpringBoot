@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserRepository extends MongoRepository<Users, ObjectId> {
+public interface UserRepository extends MongoRepository<Users, ObjectId>, UserRepositoryCustom {
     Users findByUserName(String userName);
 
     void deleteByUserName(String name);

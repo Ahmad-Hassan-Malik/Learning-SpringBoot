@@ -145,4 +145,15 @@ public class UserController {
     }
 
 
+    @GetMapping("/mongoTemplate/{role}")
+    public ResponseEntity<?> findUsersByMongoTemplate(@PathVariable String role) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String userName = authentication.getName();
+        List<Users> users = userService.filterUsers(userName,role);
+        if (users.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(users, HttpStatus.OK);
+    }
+
 }

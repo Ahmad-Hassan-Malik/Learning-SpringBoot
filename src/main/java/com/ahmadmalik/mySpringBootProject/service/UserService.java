@@ -1,9 +1,11 @@
 package com.ahmadmalik.mySpringBootProject.service;
 
+import com.ahmadmalik.mySpringBootProject.controller.PublicController;
 import com.ahmadmalik.mySpringBootProject.entity.Users;
 import com.ahmadmalik.mySpringBootProject.repository.UserRepository;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
@@ -51,5 +53,11 @@ public class UserService {
 
     public Users findByUserName(String userName) {
         return userRepository.findByUserName(userName);
+    }
+
+
+    //   Mongo Template
+    public List<Users> filterUsers(String name, String role) {
+        return userRepository.getUsersByUsernameAndRole(name,role);
     }
 }
