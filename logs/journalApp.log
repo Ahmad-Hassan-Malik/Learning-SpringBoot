@@ -358,3 +358,22 @@ Caused by: com.mongodb.MongoTimeoutException: Timed out after 30000 ms while wai
 2026-02-06 10:45:02 INFO  --- [nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2026-02-06 10:45:02 INFO  --- [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2026-02-06 10:45:02 INFO  --- [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-02-06 13:17:58 INFO  --- [           main] c.a.m.MySpringBootProjectApplication     : Starting MySpringBootProjectApplication using Java 1.8.0_202 on DESKTOP-V52FJON with PID 11216 (C:\Users\was\Downloads\mySpringBootProject\mySpringBootProject\target\classes started by was in C:\Users\was\Downloads\mySpringBootProject\mySpringBootProject)
+2026-02-06 13:17:59 DEBUG --- [           main] c.a.m.MySpringBootProjectApplication     : Running with Spring Boot v2.7.18, Spring v5.3.31
+2026-02-06 13:17:59 INFO  --- [           main] c.a.m.MySpringBootProjectApplication     : The following 1 profile is active: "prod"
+2026-02-06 13:18:00 INFO  --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2026-02-06 13:18:00 INFO  --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 100 ms. Found 2 MongoDB repository interfaces.
+2026-02-06 13:18:02 INFO  --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2026-02-06 13:18:02 INFO  --- [           main] o.a.coyote.http11.Http11NioProtocol      : Initializing ProtocolHandler ["http-nio-8082"]
+2026-02-06 13:18:02 INFO  --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-06 13:18:02 INFO  --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2026-02-06 13:18:02 INFO  --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-06 13:18:02 INFO  --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3523 ms
+2026-02-06 13:18:06 INFO  --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3f81621c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5b9499fe, org.springframework.security.web.context.SecurityContextPersistenceFilter@47311277, org.springframework.security.web.header.HeaderWriterFilter@5d5b9ecb, org.springframework.security.web.authentication.logout.LogoutFilter@3976ebfa, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2ee83775, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1e60b459, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5b7aa898, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@74d6736, org.springframework.security.web.session.SessionManagementFilter@316acbb5, org.springframework.security.web.access.ExceptionTranslationFilter@71b639d0, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5befbac1]
+2026-02-06 13:18:07 INFO  --- [           main] o.a.coyote.http11.Http11NioProtocol      : Starting ProtocolHandler ["http-nio-8082"]
+2026-02-06 13:18:07 INFO  --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2026-02-06 13:18:07 INFO  --- [           main] c.a.m.MySpringBootProjectApplication     : Started MySpringBootProjectApplication in 9.505 seconds (JVM running for 10.54)
+2026-02-06 13:19:26 INFO  --- [nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-06 13:19:26 INFO  --- [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-02-06 13:19:26 INFO  --- [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-02-06 13:19:30 INFO  --- [nio-8082-exec-1] c.a.m.service.EmailService               : Email sent successfully to: sp24-bse-008@cuilahore.edu.pk

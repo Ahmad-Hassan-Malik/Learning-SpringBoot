@@ -4,10 +4,7 @@ package com.ahmadmalik.mySpringBootProject.controller;
 import com.ahmadmalik.mySpringBootProject.api_Response.WeatherResponse;
 import com.ahmadmalik.mySpringBootProject.entity.Users;
 import com.ahmadmalik.mySpringBootProject.repository.UserRepository;
-import com.ahmadmalik.mySpringBootProject.service.ChatgptService;
-import com.ahmadmalik.mySpringBootProject.service.CohereService;
-import com.ahmadmalik.mySpringBootProject.service.UserService;
-import com.ahmadmalik.mySpringBootProject.service.WeatherService;
+import com.ahmadmalik.mySpringBootProject.service.*;
 import lombok.extern.slf4j.Slf4j;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +27,9 @@ public class UserController {
 
     @Autowired
     private WeatherService weatherService;
+
+    @Autowired
+    private EmailService emailService;
 
     @Autowired
     private ChatgptService chatgptService;
@@ -144,7 +144,7 @@ public class UserController {
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 
-
+//      Mongo template
     @GetMapping("/mongoTemplate/{role}")
     public ResponseEntity<?> findUsersByMongoTemplate(@PathVariable String role) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -154,6 +154,16 @@ public class UserController {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         return new ResponseEntity<>(users, HttpStatus.OK);
+    }
+
+
+    //    Email function
+    @GetMapping("email")
+    public ResponseEntity<?> sendTestEmail() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        emailService.sendEmail("sp24-bse-008@cuilahore.edu.pk", "Testing spring boot mail method", "Hi, Kaise ho hotty");
+
+        return new ResponseEntity<>("check you mail box", HttpStatus.OK);
     }
 
 }
