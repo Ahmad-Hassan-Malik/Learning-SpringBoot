@@ -14,9 +14,9 @@ public class UserScheduler {
     private EmailService emailService;
 
 
-    @Scheduled(cron = "*/5 * * * * *")
-    public void sendEmailToHaji() {
-        emailService.sendEmail("sp24-bse-029@cuilahore.edu.pk","FBI INVESTIGATION", "hi moli ammar kaise ho");
-        log.info("message sent");
-    }
+  //  @Scheduled(cron = "*/5 * * * * *")
+//    public void sendEmailToHaji() {
+//        emailService.sendEmail("sp24-bse-029@cuilahore.edu.pk","FBI INVESTIGATION", "hi moli ammar kaise ho");
+//        log.info("message sent");
+//    }
 }

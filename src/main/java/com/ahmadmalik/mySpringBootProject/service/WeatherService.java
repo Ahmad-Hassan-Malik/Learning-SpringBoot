@@ -17,6 +17,8 @@ public class WeatherService {
 
     private static final String API = "https://api.worldweatheronline.com/premium/v1/weather.ashx?key=API-KEY&q=CITY&format=json";
 
+    @Autowired
+    private RedisService redisService;
 
     // RestTemplate acts like a web browser for your code to talk to external servers (APIs).
 // It handles the HTTP connection (sending requests like GET/POST) and automatically
@@ -25,10 +27,20 @@ public class WeatherService {
     private RestTemplate restTemplate;
 
     public WeatherResponse getWeather(String city) {
-        String finalAPI = API.replace("CITY", city).replace("API-KEY", apiKey);
-        ResponseEntity<WeatherResponse> response = restTemplate.exchange(finalAPI, HttpMethod.GET,null, WeatherResponse.class);
-        WeatherResponse body = response.getBody();
-        return body;
+        WeatherResponse weatherResponse = redisService.get("weather_of_" + city, WeatherResponse.class);
+        if (weatherResponse != null) {
+            System.out.println("Weather got from redis...!!!");
+            return weatherResponse;
+        } else {
+            String finalAPI = API.replace("CITY", city).replace("API-KEY", apiKey);
+            ResponseEntity<WeatherResponse> response = restTemplate.exchange(finalAPI, HttpMethod.GET,null, WeatherResponse.class);
+            WeatherResponse body = response.getBody();
+            if (body != null) {
+                redisService.set("weather_of_" + city, body, 300l);
+            }
+            return body;
+        }
+
     }
 
 }

@@ -108,7 +108,7 @@ public class UserController {
     @GetMapping
     public ResponseEntity<?> weatherCondition() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        WeatherResponse weatherResponse = weatherService.getWeather("Multan");
+        WeatherResponse weatherResponse = weatherService.getWeather("Lahore");
         WeatherResponse.CurrentCondition current = weatherResponse.getData().getCurrentCondition().get(0);
         if (current != null) {
             System.out.println("hi " + authentication.getName());
