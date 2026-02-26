@@ -68,7 +68,7 @@ public ResponseEntity<?> getAllEntriesByUserName() {
     @PostMapping("/xyz")
     public ResponseEntity<?> createEntry(@RequestBody JournalEntry myEntry) {
         try {
-//            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 //            String userName = authentication.getName();
             myEntry.setDate(LocalDateTime.now());
             jService.saveEntry(myEntry);
