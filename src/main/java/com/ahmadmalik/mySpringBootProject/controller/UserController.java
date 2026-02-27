@@ -5,6 +5,7 @@ import com.ahmadmalik.mySpringBootProject.api_Response.WeatherResponse;
 import com.ahmadmalik.mySpringBootProject.entity.Users;
 import com.ahmadmalik.mySpringBootProject.repository.UserRepository;
 import com.ahmadmalik.mySpringBootProject.service.*;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/users")
+@Tag(name = "User Apis", description = "Create, delete, update users")
 public class UserController {
 
     @Autowired

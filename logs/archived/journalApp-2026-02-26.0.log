@@ -1,0 +1,288 @@
+2026-02-26 15:16:17 INFO  --- [           main] c.a.m.MySpringBootProjectApplication     : Starting MySpringBootProjectApplication using Java 1.8.0_202 on DESKTOP-V52FJON with PID 20048 (C:\Users\was\Downloads\mySpringBootProject\mySpringBootProject\target\classes started by was in C:\Users\was\Downloads\mySpringBootProject\mySpringBootProject)
+2026-02-26 15:16:17 DEBUG --- [           main] c.a.m.MySpringBootProjectApplication     : Running with Spring Boot v2.7.18, Spring v5.3.31
+2026-02-26 15:16:17 INFO  --- [           main] c.a.m.MySpringBootProjectApplication     : The following 1 profile is active: "prod"
+2026-02-26 15:16:18 INFO  --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-26 15:16:18 INFO  --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2026-02-26 15:16:18 INFO  --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 250 ms. Found 2 MongoDB repository interfaces.
+2026-02-26 15:16:18 INFO  --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-26 15:16:18 INFO  --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-02-26 15:16:18 INFO  --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ahmadmalik.mySpringBootProject.repository.JournalEntryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 15:16:18 INFO  --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ahmadmalik.mySpringBootProject.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 15:16:18 INFO  --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2026-02-26 15:16:19 INFO  --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2026-02-26 15:16:19 INFO  --- [           main] o.a.coyote.http11.Http11NioProtocol      : Initializing ProtocolHandler ["http-nio-8082"]
+2026-02-26 15:16:19 INFO  --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-26 15:16:19 INFO  --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2026-02-26 15:16:19 INFO  --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-26 15:16:19 INFO  --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2421 ms
+2026-02-26 15:16:22 DEBUG --- [           main] c.a.m.Filter.JwtFilter                   : Filter 'jwtFilter' configured for use
+2026-02-26 15:16:23 INFO  --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7742a45c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7ca492d9, org.springframework.security.web.context.SecurityContextPersistenceFilter@4b55ff0a, org.springframework.security.web.header.HeaderWriterFilter@412ebe64, org.springframework.security.web.authentication.logout.LogoutFilter@2dd1086, com.ahmadmalik.mySpringBootProject.Filter.JwtFilter@5807efad, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@256a0d95, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@44f0ff2b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@14fc9bd, org.springframework.security.web.session.SessionManagementFilter@3a1b36a1, org.springframework.security.web.access.ExceptionTranslationFilter@153cb763, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@fb5aeed]
+2026-02-26 15:16:23 INFO  --- [           main] o.a.coyote.http11.Http11NioProtocol      : Starting ProtocolHandler ["http-nio-8082"]
+2026-02-26 15:16:23 INFO  --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2026-02-26 15:16:23 INFO  --- [           main] c.a.m.MySpringBootProjectApplication     : Started MySpringBootProjectApplication in 7.255 seconds (JVM running for 7.976)
+2026-02-26 15:17:08 INFO  --- [nio-8082-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-26 15:17:08 INFO  --- [nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-02-26 15:17:08 INFO  --- [nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-02-26 15:18:40 WARN  --- [nio-8082-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2026-02-26 15:19:22 ERROR --- [nio-8082-exec-6] c.a.m.controller.PublicController        : Exception While logging in
+2026-02-26 15:20:20 ERROR --- [nio-8082-exec-8] c.a.m.controller.PublicController        : Exception While logging in
+2026-02-26 15:23:12 ERROR --- [nio-8082-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+io.jsonwebtoken.UnsupportedJwtException: Signed Claims JWSs are not supported.
+	at io.jsonwebtoken.JwtHandlerAdapter.onClaimsJws(JwtHandlerAdapter.java:50)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:535)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parseClaimsJwt(DefaultJwtParser.java:562)
+	at io.jsonwebtoken.impl.ImmutableJwtParser.parseClaimsJwt(ImmutableJwtParser.java:163)
+	at com.ahmadmalik.mySpringBootProject.utils.JwtUtil.extractAllClaims(JwtUtil.java:60)
+	at com.ahmadmalik.mySpringBootProject.utils.JwtUtil.extractUserName(JwtUtil.java:40)
+	at com.ahmadmalik.mySpringBootProject.Filter.JwtFilter.doFilterInternal(JwtFilter.java:36)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:112)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:82)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:221)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:186)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:928)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1794)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2026-02-26 15:29:48 INFO  --- [           main] c.a.m.MySpringBootProjectApplication     : Starting MySpringBootProjectApplication using Java 1.8.0_202 on DESKTOP-V52FJON with PID 20008 (C:\Users\was\Downloads\mySpringBootProject\mySpringBootProject\target\classes started by was in C:\Users\was\Downloads\mySpringBootProject\mySpringBootProject)
+2026-02-26 15:29:48 DEBUG --- [           main] c.a.m.MySpringBootProjectApplication     : Running with Spring Boot v2.7.18, Spring v5.3.31
+2026-02-26 15:29:48 INFO  --- [           main] c.a.m.MySpringBootProjectApplication     : The following 1 profile is active: "prod"
+2026-02-26 15:29:49 INFO  --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-26 15:29:49 INFO  --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2026-02-26 15:29:49 INFO  --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 217 ms. Found 2 MongoDB repository interfaces.
+2026-02-26 15:29:49 INFO  --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-26 15:29:49 INFO  --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-02-26 15:29:49 INFO  --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ahmadmalik.mySpringBootProject.repository.JournalEntryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 15:29:49 INFO  --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ahmadmalik.mySpringBootProject.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 15:29:49 INFO  --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2026-02-26 15:29:50 INFO  --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2026-02-26 15:29:50 INFO  --- [           main] o.a.coyote.http11.Http11NioProtocol      : Initializing ProtocolHandler ["http-nio-8082"]
+2026-02-26 15:29:50 INFO  --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-26 15:29:50 INFO  --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2026-02-26 15:29:51 INFO  --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-26 15:29:51 INFO  --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2236 ms
+2026-02-26 15:29:54 DEBUG --- [           main] c.a.m.Filter.JwtFilter                   : Filter 'jwtFilter' configured for use
+2026-02-26 15:29:54 INFO  --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2fc49538, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@670342a2, org.springframework.security.web.context.SecurityContextPersistenceFilter@599a9cb2, org.springframework.security.web.header.HeaderWriterFilter@26582ca, org.springframework.security.web.authentication.logout.LogoutFilter@78d23d6a, com.ahmadmalik.mySpringBootProject.Filter.JwtFilter@1ee27d73, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5e1a986c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2f3928ac, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@d5e575c, org.springframework.security.web.session.SessionManagementFilter@7a83ccd2, org.springframework.security.web.access.ExceptionTranslationFilter@643ba1ed, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3c88191b]
+2026-02-26 15:29:55 INFO  --- [           main] o.a.coyote.http11.Http11NioProtocol      : Starting ProtocolHandler ["http-nio-8082"]
+2026-02-26 15:29:55 INFO  --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2026-02-26 15:29:55 INFO  --- [           main] c.a.m.MySpringBootProjectApplication     : Started MySpringBootProjectApplication in 7.245 seconds (JVM running for 7.745)
+2026-02-26 15:29:59 INFO  --- [nio-8082-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-26 15:29:59 INFO  --- [nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-02-26 15:29:59 INFO  --- [nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-02-26 15:33:27 INFO  --- [           main] c.a.m.MySpringBootProjectApplication     : Starting MySpringBootProjectApplication using Java 1.8.0_202 on DESKTOP-V52FJON with PID 19072 (C:\Users\was\Downloads\mySpringBootProject\mySpringBootProject\target\classes started by was in C:\Users\was\Downloads\mySpringBootProject\mySpringBootProject)
+2026-02-26 15:33:27 DEBUG --- [           main] c.a.m.MySpringBootProjectApplication     : Running with Spring Boot v2.7.18, Spring v5.3.31
+2026-02-26 15:33:27 INFO  --- [           main] c.a.m.MySpringBootProjectApplication     : The following 1 profile is active: "prod"
+2026-02-26 15:33:28 INFO  --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-26 15:33:28 INFO  --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2026-02-26 15:33:28 INFO  --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 305 ms. Found 2 MongoDB repository interfaces.
+2026-02-26 15:33:28 INFO  --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-26 15:33:28 INFO  --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-02-26 15:33:28 INFO  --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ahmadmalik.mySpringBootProject.repository.JournalEntryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 15:33:28 INFO  --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ahmadmalik.mySpringBootProject.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 15:33:28 INFO  --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2026-02-26 15:33:29 INFO  --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2026-02-26 15:33:29 INFO  --- [           main] o.a.coyote.http11.Http11NioProtocol      : Initializing ProtocolHandler ["http-nio-8082"]
+2026-02-26 15:33:29 INFO  --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-26 15:33:29 INFO  --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2026-02-26 15:33:30 INFO  --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-26 15:33:30 INFO  --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2753 ms
+2026-02-26 15:33:32 DEBUG --- [           main] c.a.m.Filter.JwtFilter                   : Filter 'jwtFilter' configured for use
+2026-02-26 15:33:33 INFO  --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@619c93ca, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@486e9d1d, org.springframework.security.web.context.SecurityContextPersistenceFilter@22ead351, org.springframework.security.web.header.HeaderWriterFilter@599a9cb2, org.springframework.security.web.authentication.logout.LogoutFilter@28393e82, com.ahmadmalik.mySpringBootProject.Filter.JwtFilter@1e60b459, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@43d65a81, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@11ede87f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6aa5974e, org.springframework.security.web.session.SessionManagementFilter@31834a2b, org.springframework.security.web.access.ExceptionTranslationFilter@7a83ccd2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@670342a2]
+2026-02-26 15:33:33 INFO  --- [           main] o.a.coyote.http11.Http11NioProtocol      : Starting ProtocolHandler ["http-nio-8082"]
+2026-02-26 15:33:33 INFO  --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2026-02-26 15:33:33 INFO  --- [           main] c.a.m.MySpringBootProjectApplication     : Started MySpringBootProjectApplication in 6.984 seconds (JVM running for 7.603)
+2026-02-26 15:33:57 INFO  --- [nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-26 15:33:57 INFO  --- [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-02-26 15:33:57 INFO  --- [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-02-26 15:33:57 WARN  --- [nio-8082-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2026-02-26 15:36:10 ERROR --- [nio-8082-exec-6] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+io.jsonwebtoken.UnsupportedJwtException: Signed Claims JWSs are not supported.
+	at io.jsonwebtoken.JwtHandlerAdapter.onClaimsJws(JwtHandlerAdapter.java:50)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:535)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parseClaimsJwt(DefaultJwtParser.java:562)
+	at io.jsonwebtoken.impl.ImmutableJwtParser.parseClaimsJwt(ImmutableJwtParser.java:163)
+	at com.ahmadmalik.mySpringBootProject.utils.JwtUtil.extractAllClaims(JwtUtil.java:60)
+	at com.ahmadmalik.mySpringBootProject.utils.JwtUtil.extractUserName(JwtUtil.java:40)
+	at com.ahmadmalik.mySpringBootProject.Filter.JwtFilter.doFilterInternal(JwtFilter.java:36)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:112)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:82)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:221)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:186)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:928)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1794)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2026-02-26 15:37:35 ERROR --- [nio-8082-exec-8] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+io.jsonwebtoken.UnsupportedJwtException: Signed Claims JWSs are not supported.
+	at io.jsonwebtoken.JwtHandlerAdapter.onClaimsJws(JwtHandlerAdapter.java:50)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:535)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parseClaimsJwt(DefaultJwtParser.java:562)
+	at io.jsonwebtoken.impl.ImmutableJwtParser.parseClaimsJwt(ImmutableJwtParser.java:163)
+	at com.ahmadmalik.mySpringBootProject.utils.JwtUtil.extractAllClaims(JwtUtil.java:60)
+	at com.ahmadmalik.mySpringBootProject.utils.JwtUtil.extractUserName(JwtUtil.java:40)
+	at com.ahmadmalik.mySpringBootProject.Filter.JwtFilter.doFilterInternal(JwtFilter.java:36)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:112)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:82)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:221)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:186)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:928)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1794)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2026-02-26 15:43:27 INFO  --- [           main] c.a.m.MySpringBootProjectApplication     : Starting MySpringBootProjectApplication using Java 1.8.0_202 on DESKTOP-V52FJON with PID 15708 (C:\Users\was\Downloads\mySpringBootProject\mySpringBootProject\target\classes started by was in C:\Users\was\Downloads\mySpringBootProject\mySpringBootProject)
+2026-02-26 15:43:27 DEBUG --- [           main] c.a.m.MySpringBootProjectApplication     : Running with Spring Boot v2.7.18, Spring v5.3.31
+2026-02-26 15:43:27 INFO  --- [           main] c.a.m.MySpringBootProjectApplication     : The following 1 profile is active: "prod"
+2026-02-26 15:43:28 INFO  --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-26 15:43:28 INFO  --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2026-02-26 15:43:28 INFO  --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 178 ms. Found 2 MongoDB repository interfaces.
+2026-02-26 15:43:28 INFO  --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-26 15:43:28 INFO  --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-02-26 15:43:28 INFO  --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ahmadmalik.mySpringBootProject.repository.JournalEntryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 15:43:28 INFO  --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ahmadmalik.mySpringBootProject.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-26 15:43:28 INFO  --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2026-02-26 15:43:29 INFO  --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2026-02-26 15:43:29 INFO  --- [           main] o.a.coyote.http11.Http11NioProtocol      : Initializing ProtocolHandler ["http-nio-8082"]
+2026-02-26 15:43:29 INFO  --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-26 15:43:29 INFO  --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2026-02-26 15:43:30 INFO  --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-26 15:43:30 INFO  --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2028 ms
+2026-02-26 15:43:32 DEBUG --- [           main] c.a.m.Filter.JwtFilter                   : Filter 'jwtFilter' configured for use
+2026-02-26 15:43:33 INFO  --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7ca492d9, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@14fc9bd, org.springframework.security.web.context.SecurityContextPersistenceFilter@46a795de, org.springframework.security.web.header.HeaderWriterFilter@6f731759, org.springframework.security.web.authentication.logout.LogoutFilter@6b8d54da, com.ahmadmalik.mySpringBootProject.Filter.JwtFilter@53a84ff4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2f3928ac, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@22ead351, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7ed49a7f, org.springframework.security.web.session.SessionManagementFilter@5e1a986c, org.springframework.security.web.access.ExceptionTranslationFilter@2c3158e0, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@73893ec1]
+2026-02-26 15:43:33 INFO  --- [           main] o.a.coyote.http11.Http11NioProtocol      : Starting ProtocolHandler ["http-nio-8082"]
+2026-02-26 15:43:33 INFO  --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2026-02-26 15:43:33 INFO  --- [           main] c.a.m.MySpringBootProjectApplication     : Started MySpringBootProjectApplication in 6.55 seconds (JVM running for 7.087)
+2026-02-26 15:43:41 INFO  --- [nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-26 15:43:41 INFO  --- [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-02-26 15:43:41 INFO  --- [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-02-26 15:44:51 WARN  --- [nio-8082-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
